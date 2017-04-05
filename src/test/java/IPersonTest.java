@@ -26,7 +26,7 @@ public abstract class IPersonTest {
         @Test
         public void wasBorn_should_give_false_on_anterior_date()
         {
-            GregorianCalendar anteriorDate = new GregorianCalendar(1999,12,01);
+            GregorianCalendar anteriorDate = new GregorianCalendar(1999,12,1);
             
             boolean wasBorn = dupont.wasBorn(anteriorDate);
             
@@ -44,41 +44,40 @@ public abstract class IPersonTest {
         }
         
         @Test
-        public void wasBorn_should_give_false_on_posterior_date()
+        public void wasBorn_should_give_true_on_posterior_date()
         {
-            GregorianCalendar anteriorDate = new GregorianCalendar(2000,02,01);
-            
-            boolean wasBorn = dupont.wasBorn(anteriorDate);
-            
-            assertThat(wasBorn).isFalse();
-        }
-        
-        @Test
-        public void wasBorn_should_give_false_on_day_after()
-        {
-            GregorianCalendar anteriorDate = new GregorianCalendar(2000,01,02);
-            
-            boolean wasBorn = dupont.wasBorn(anteriorDate);
-            
-            assertThat(wasBorn).isFalse();
-        }
-        
-        @Test
-        public void wasBorn_should_give_true_on_same_date()
-        {
-            GregorianCalendar anteriorDate = new GregorianCalendar(2000,01,01);
+            GregorianCalendar anteriorDate = new GregorianCalendar(2000,2,1);
             
             boolean wasBorn = dupont.wasBorn(anteriorDate);
             
             assertThat(wasBorn).isTrue();
         }
         
-        @Test(expected=IllegalArgumentException.class)
-        public void wasBorn_should_give_illegal_on_null()
+        @Test
+        public void wasBorn_should_give_true_on_day_after()
         {
-            GregorianCalendar anteriorDate = new GregorianCalendar();
+            GregorianCalendar anteriorDate = new GregorianCalendar(2000,1,2);
             
             boolean wasBorn = dupont.wasBorn(anteriorDate);
+            
+            assertThat(wasBorn).isTrue();
+        }
+        
+        @Test
+        public void wasBorn_should_give_true_on_same_date()
+        {
+            GregorianCalendar anteriorDate = new GregorianCalendar(2000,1,1);
+            
+            boolean wasBorn = dupont.wasBorn(anteriorDate);
+            
+            assertThat(wasBorn).isTrue();
+        }
+        
+        @Test(expected=NullPointerException.class)
+        public void wasBorn_should_give_illegal_on_null()
+        {
+            
+            boolean wasBorn = dupont.wasBorn(null);
             
             assertThat(wasBorn).isFalse();
         }
@@ -86,7 +85,7 @@ public abstract class IPersonTest {
         @Test(expected=IllegalArgumentException.class)
         public void getAge_should_give_illegal_on_anterior_date()
         {
-            GregorianCalendar anteriorDate = new GregorianCalendar(1999,12,01);
+            GregorianCalendar anteriorDate = new GregorianCalendar(1999,12,1);
             
             int age = dupont.getAge(anteriorDate);
             
@@ -106,7 +105,7 @@ public abstract class IPersonTest {
         @Test
         public void getAge_should_give_positive_on_posterior_date()
         {
-            GregorianCalendar posteriorDate = new GregorianCalendar(2001, 01, 01);
+            GregorianCalendar posteriorDate = new GregorianCalendar(2001, 1, 1);
             
             int age = dupont.getAge(posteriorDate);
             
@@ -116,7 +115,7 @@ public abstract class IPersonTest {
         @Test
         public void getAge_should_give_zero_on_day_after()
         {
-            GregorianCalendar dayAfter = new GregorianCalendar(2000, 01, 02);
+            GregorianCalendar dayAfter = new GregorianCalendar(2000, 1, 2);
             
             int age = dupont.getAge(dayAfter);
             
@@ -126,14 +125,14 @@ public abstract class IPersonTest {
         @Test
         public void getAge_should_give_zero_on_same_date()
         {
-            GregorianCalendar sameDate = new GregorianCalendar(2000, 01, 01);
+            GregorianCalendar sameDate = new GregorianCalendar(2000, 1, 1);
             
             int age = dupont.getAge(sameDate);
             
             assertThat(age).isZero();
         }
         
-        @Test(expected=IllegalArgumentException.class)
+        @Test(expected=NullPointerException.class)
         public void getAge_should_give_illegal_on_null()
         {
             
