@@ -17,6 +17,10 @@ jour d'avant| valide | 31/12/1999 | false
 jour d'après | valide | 02/01/2000 | true
 date nulle | invalide | "" | illegal argument exception
 
+| Classe         | Validité | Représentant | Oracle |
+|----------------|----------|--------------|--------|
+| date antérieur | valide   | 01/12/1999   | false  |
+
 getAge()
 On suppose que la personne est née le 1er Janvier 2000
 Classe | Validité | Représentant | Oracle
