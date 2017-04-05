@@ -6,7 +6,7 @@
 
 ## Question 1
 
-wasborn()
+### fonction wasborn()
 On suppose que la personne est née le 1er Janvier 2000
 
 | Classe          | Validité | Représentant | Oracle                     |
@@ -18,7 +18,7 @@ On suppose que la personne est née le 1er Janvier 2000
 | jour d'après    | valide   | 02/01/2000   | true                       |
 | date nulle      | invalide | ""           | illegal argument exception |
 
-getAge()
+### fonction getAge()
 On suppose que la personne est née le 1er Janvier 2000
 
 | Classe          | Validité | Représentant | Oracle                     |
