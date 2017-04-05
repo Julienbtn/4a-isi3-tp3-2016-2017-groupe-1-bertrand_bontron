@@ -1,12 +1,8 @@
-import java.util.GregorianCalendar;
-import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.After;
 import org.junit.Before;
-import java.lang.IllegalArgumentException;
-
 import org.junit.Test;
 import persons.IPerson;
-import persons.Person;
+import java.util.GregorianCalendar;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -74,7 +70,7 @@ public abstract class IPersonTest {
         }
         
         @Test(expected=NullPointerException.class)
-        public void wasBorn_should_give_illegal_on_null()
+        public void wasBorn_should_throw_NullPointer_on_null()
         {
             
             boolean wasBorn = dupont.wasBorn(null);
@@ -83,7 +79,7 @@ public abstract class IPersonTest {
         }
         
         @Test(expected=IllegalArgumentException.class)
-        public void getAge_should_give_illegal_on_anterior_date()
+        public void getAge_should_throw_IllegalArgument_on_anterior_date()
         {
             GregorianCalendar anteriorDate = new GregorianCalendar(1999,12,1);
             
@@ -93,7 +89,7 @@ public abstract class IPersonTest {
         }
         
         @Test(expected=IllegalArgumentException.class)
-        public void getAge_should_give_illegal_on_day_before()
+        public void getAge_should_throw_IllegalArgument_on_day_before()
         {
             GregorianCalendar dayBefore = new GregorianCalendar(1999,12,31);
             
@@ -133,7 +129,7 @@ public abstract class IPersonTest {
         }
         
         @Test(expected=NullPointerException.class)
-        public void getAge_should_give_illegal_on_null()
+        public void getAge_should_throw_NullPointer_on_null()
         {
             
             int age = dupont.getAge(null);
