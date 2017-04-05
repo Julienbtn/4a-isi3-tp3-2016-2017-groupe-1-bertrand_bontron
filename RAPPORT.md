@@ -9,7 +9,7 @@
 wasborn()
 On suppose que la personne est née le 1er Janvier 2000
 Classe | Validité | Représentant | Oracle
--------|----------|--------------|-------
+------ | -------- | ------------ | ------
 date antérieur | valide | 01/12/1999 | false
 date postérieur | valide | 01/02/2000 | true
 jour même | valide | 01/01/2000 | true 
