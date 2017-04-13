@@ -32,3 +32,21 @@ On suppose que la personne est née le 1er Janvier 2000
 
 ## Question 2
 
+## Question 3 
+
+Afin de faire passer ces tests sur aux classes du package people qui implémentent l’interface IPerson nous avons utilisé un pattern adaptateur en créant 
+la classe PersonneAdapter.
+
+## Question 4
+
+## Question 5
+
+## Question 6
+
+## Question 7
+
+## Question 8
+
+## Question 9
+
+## Question 10

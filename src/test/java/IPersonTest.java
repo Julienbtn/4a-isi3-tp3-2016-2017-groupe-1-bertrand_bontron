@@ -13,11 +13,13 @@ public abstract class IPersonTest {
         @Before
         public abstract void setup();
         
+        /*
         @After
         public void after()
         {
             
         }
+        */
         
         @Test
         public void wasBorn_should_give_false_on_anterior_date()
