@@ -32,21 +32,39 @@ On suppose que la personne est née le 1er Janvier 2000
 
 ## Question 2
 
+Après avoir implémenter les cas de test nous pouvons observer que ceux-ci fontionnent correctement. 
+
 ## Question 3 
 
-Afin de faire passer ces tests sur aux classes du package people qui implémentent l’interface IPerson nous avons utilisé un pattern adaptateur en créant 
-la classe PersonneAdapter.
+Afin de faire passer ces tests aux classes du package people qui implémentent l’interface IPerson nous avons utilisé une architecture similaire au pattern
+stratégie. Comme les mêmes tests sont appliqués à chaque classe implémentant IPerson on implémente les tests dans une seule classe puis changeons le type
+d'argument des classes filles. 
 
 ## Question 4
 
+En effet, sur chaque classe tester elles renvoient toutes au moins une erreur.
+
 ## Question 5
+
+Afin de faire passer les tests précédents à la classe Personne du package people nous avons utiliser le pattern Adapteur et pour cela nous avons implémenté
+la classe PersonneAdapter. 
 
 ## Question 6
 
+Voir code de la classe OutilPerson fonction filterByAgeInterval().
+
 ## Question 7
+
+Voir code de la classe OutilPerson fonction getMaxAge().
 
 ## Question 8
 
+Voir code de la classe OutilPerson 
+
 ## Question 9
 
+Nous utilisons l'outil intégré à l'IDE IntelliJ, celui nous indique que l'ensembe des method est couvert mais pas l'ensemble des lignes car le constructeur 
+n'est pas pris en compte. 
+
 ## Question 10
+
