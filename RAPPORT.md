@@ -68,3 +68,4 @@ n'est pas pris en compte.
 
 ## Question 10
 
+Voir le code de OutilPersonTest, notamment de la fonction [after](/src/test/java/OutilPersonTest.java#L39)
