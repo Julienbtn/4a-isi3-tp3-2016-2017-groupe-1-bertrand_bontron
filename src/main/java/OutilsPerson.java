@@ -6,12 +6,13 @@ import persons.IPerson;
 
 
 
-public class OutilsPerson {
+public abstract class OutilsPerson {
+
 
     public static Collection<IPerson> filterByAgeInterval(Collection<IPerson> persons, GregorianCalendar date, int ageMin, int ageMax)
     {
         if (ageMin > ageMax || ageMin < 0)
-            throw new IllegalArgumentException("ageMin ne peut pas être inférieur à 0 ou supérieur à ageMax");
+            throw new IllegalArgumentException("ageMin ne peut pas ï¿½tre infï¿½rieur ï¿½ 0 ou supï¿½rieur ï¿½ ageMax");
         
         ArrayList<IPerson> res = new ArrayList<>();
         persons.forEach(n -> {

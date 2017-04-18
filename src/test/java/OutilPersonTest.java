@@ -1,4 +1,5 @@
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import persons.IPerson;
@@ -18,10 +19,11 @@ public class OutilPersonTest {
     private IPerson person8;
     private IPerson person1;
     private IPerson person63;
+    private Collection<IPerson> persons;
 
     @Before
     public void setup(){
-
+        persons = new ArrayList<>();
         person5 = mock(Person.class);
         when(person5.getAge(any(GregorianCalendar.class))).thenReturn(5);
         person8 = mock(Person.class);
@@ -33,9 +35,18 @@ public class OutilPersonTest {
         
     }
 
+    @After
+    public void after(){
+        for (IPerson person : persons){
+            verify(person, atMost(0)).getName();
+            verify(person, atMost(0)).getFirstName();
+            verify(person, atLeast(1)).getAge(any(GregorianCalendar.class));
+        }
+    }
+
+
     @Test
     public void filterByAgeInterval_should_be_between_1_and_15(){
-        Collection<IPerson> persons = new ArrayList<>();
         persons.add(person5);
         persons.add(person8);
         persons.add(person1);
@@ -48,7 +59,6 @@ public class OutilPersonTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void filterByAgeInterval_should_throw_IllegalArgument_when_ageMin_sup_to_ageMax(){
-        Collection<IPerson> persons = new ArrayList<>();
         Collection<IPerson> filtered;
 
         filtered = OutilsPerson.filterByAgeInterval(persons, date, 15, 1);
@@ -58,7 +68,6 @@ public class OutilPersonTest {
 
     @Test
     public void getMaxAge_should_be_8(){
-        Collection<IPerson> persons = new ArrayList<>();
         persons.add(person1);
         persons.add(person8);
         persons.add(person5);
@@ -70,7 +79,6 @@ public class OutilPersonTest {
 
     @Test
     public void getMaxAge_should_be_minus_one_when_empty_list(){
-        Collection<IPerson> persons = new ArrayList<>();
 
         int maxAge = OutilsPerson.getMaxAge(persons, date);
 
