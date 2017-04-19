@@ -51,15 +51,15 @@ la classe PersonneAdapter.
 
 ## Question 6
 
-Voir code de la classe OutilPerson fonction filterByAgeInterval().
+Voir code de la classe OutilPerson fonction [filterByAgeInterval](/src/main/java/OutilsPerson.java#L12).
 
 ## Question 7
 
-Voir code de la classe OutilPerson fonction getMaxAge().
+Voir code de la classe OutilPerson fonction [getMaxAge](/src/main/java/OutilsPerson.java#L12).
 
 ## Question 8
 
-Voir code de la classe OutilPerson 
+Voir code de la classe OutilPersonTest 
 
 ## Question 9
 
