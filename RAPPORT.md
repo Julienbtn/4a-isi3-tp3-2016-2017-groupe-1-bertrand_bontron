@@ -49,22 +49,28 @@ En effet, sur chaque classe tester elles renvoient toutes au moins une erreur.
 Afin de faire passer les tests précédents à la classe Personne du package people nous avons utiliser le pattern Adapteur et pour cela nous avons implémenté
 la classe PersonneAdapter. 
 
+Voici l'uml de l'implémentation du pattern Adapteur.
+![uml Adapteur](images/UML.png)
+
 ## Question 6
 
-Voir code de la classe OutilPerson fonction filterByAgeInterval().
+Voir code de la classe OutilPerson fonction [filterByAgeInterval](/src/main/java/OutilsPerson.java#L12).
 
 ## Question 7
 
-Voir code de la classe OutilPerson fonction getMaxAge().
+Voir code de la classe OutilPerson fonction [getMaxAge](/src/main/java/OutilsPerson.java#L12).
 
 ## Question 8
 
-Voir code de la classe OutilPerson 
+Voir code de la classe OutilPersonTest 
 
 ## Question 9
 
 Nous utilisons l'outil intégré à l'IDE IntelliJ, celui nous indique que l'ensembe des method est couvert mais pas l'ensemble des lignes car le constructeur 
 n'est pas pris en compte. 
+
+Voici le coverage du code obtenu. 
+![code coverage](images/coverage.png)
 
 ## Question 10
 
