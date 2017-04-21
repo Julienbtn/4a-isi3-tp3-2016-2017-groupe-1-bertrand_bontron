@@ -16,10 +16,11 @@ public abstract class OutilsPerson {
         
         ArrayList<IPerson> res = new ArrayList<>();
         persons.forEach(n -> {
-            if (n.getAge(date) >= ageMin && n.getAge(date) <= ageMax)
+            int age = n.getAge(date);
+            if (age >= ageMin && age <= ageMax)
                 res.add(n);
             });
-        
+
         return res;
     }
 

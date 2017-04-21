@@ -58,7 +58,7 @@ Voir code de la classe OutilPerson fonction [filterByAgeInterval](/src/main/java
 
 ## Question 7
 
-Voir code de la classe OutilPerson fonction [getMaxAge](/src/main/java/OutilsPerson.java#L12).
+Voir code de la classe OutilPerson fonction [getMaxAge](/src/main/java/OutilsPerson.java#L26).
 
 ## Question 8
 
@@ -74,4 +74,5 @@ Voici le coverage du code obtenu.
 
 ## Question 10
 
-Voir le code de OutilPersonTest, notamment de la fonction [after](/src/test/java/OutilPersonTest.java#L39)
+Pour s'assurer que la méthode `getMaxAge` n'utilise qu'une fois `getAge` et jamais les fonctions `getName` et 
+`getFirstName`, on utilise les fonctions de Mockito sur les Mock `verify` et `never`.

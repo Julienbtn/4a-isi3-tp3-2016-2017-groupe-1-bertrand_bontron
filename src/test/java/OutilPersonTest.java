@@ -35,14 +35,6 @@ public class OutilPersonTest {
         
     }
 
-    @After
-    public void after(){
-        for (IPerson person : persons){
-            verify(person, atMost(0)).getName();
-            verify(person, atMost(0)).getFirstName();
-            verify(person, atLeast(1)).getAge(any(GregorianCalendar.class));
-        }
-    }
 
 
     @Test
@@ -75,6 +67,11 @@ public class OutilPersonTest {
         int maxAge = OutilsPerson.getMaxAge(persons, date);
 
         assertThat(maxAge).isEqualTo(8);
+        for (IPerson person : persons){
+            verify(person).getAge(any(GregorianCalendar.class));
+            verify(person, never()).getFirstName();
+            verify(person, never()).getName();
+        }
     }
 
     @Test
